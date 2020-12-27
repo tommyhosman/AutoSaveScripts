@@ -2,11 +2,13 @@
 
 Matlab function to periodically save modified scripts (including unsaved `Untitled` scripts) to a backup directory (organized by date and Matlab instance).
 
+Typical use case is to call this function from startup.m such that this runs in the background.
+
 ## Need
 
-Matlab may close before there is an opportunity to save modified functions/scripts (e.g. `Untitled` scripts).
+Matlab may close before there is an opportunity to save modified functions/scripts (e.g. `Untitled` scripts), e.g. OS restart or Matlab crash.
 
-This script's main purpose is to handle backing up unsaved `Untitled` scripts because Matlab does not currently have a method to do this.
+This script will check and back up all unsaved files/scripts in the Matlab editor, to prevent data loss in case Matlab closing before the opportunity to save. That said, the script's main purpose is to handle backing up unsaved `Untitled` scripts because Matlab does not currently save or back up these scripts.
 
 ## Code header
 
@@ -22,7 +24,7 @@ Example OS path: `userpath`/backup/2020-12-26/MatlabInstance3/
 
 Example path using param names: `backupDir`/`backupSubDirFormat`/`backupInstanceDir` `number`/
 
-### Debug / Params
+### Params / Debug
 
 Params:
 

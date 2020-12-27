@@ -1,7 +1,10 @@
 function tOut = AutoSaveScripts()
 % AutoSaveScripts()
 % Backup unsaved scripts (including unsaved Untitled scripts) to a backup
-% directory every <autoSaveRefresh_sec>.
+% directory every <autoSaveRefresh_sec>. 
+% 
+% Typical use case is to call this function from startup.m to periodically
+% save scripts in the background.
 % 
 % Instance backup folders are created and auto-incremented to handle multiple
 % matlab instances.
